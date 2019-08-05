@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.wasla.waslasearch"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appcompat}"
+    implementation "androidx.core:core-ktx:${rootProject.ext.coreKtx}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraintlayout}"
+    implementation "com.google.android.material:material:${rootProject.ext.material}"
+    testImplementation "junit:junit:${rootProject.ext.junit}"
+    androidTestImplementation "androidx.test:runner:${rootProject.ext.testRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espressoCore}"
+
+    // Koin dependency injection
+    implementation "org.koin:koin-core:${rootProject.ext.koin}"
+
+    // Retrofit network library with Rx support and logging interceptor for logging API request and response
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.loggingInterceptor}"
+
+    // RxAndroid is a Java VM implementation of Reactive Extensions: a library for
+    // composing asynchronous and event-based programs by using observable sequences
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroid}"
+}
