@@ -1,2 +1,2 @@
-# WaslaSearch
+# GoogleSearch
 Wasla Challenge
