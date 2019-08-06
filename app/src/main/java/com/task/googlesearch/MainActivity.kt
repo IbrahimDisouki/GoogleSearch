@@ -1,4 +1,4 @@
-package com.wasla.waslasearch
+package com.task.googlesearch
 
 import android.os.Bundle
 import android.view.Menu

@@ -1,4 +1,4 @@
-package com.wasla.waslasearch
+package com.task.googlesearch
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

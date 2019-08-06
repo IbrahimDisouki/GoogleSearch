@@ -1,4 +1,4 @@
-package com.wasla.waslasearch
+package com.task.googlesearch
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

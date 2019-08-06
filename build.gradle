@@ -37,4 +37,5 @@ ext {
     retrofit = '2.5.0'
     loggingInterceptor = '4.0.1'
     rxAndroid = '2.1.1'
+    lifecycle = '2.0.0'
 }

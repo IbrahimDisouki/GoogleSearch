@@ -7,12 +7,15 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.wasla.waslasearch"
+        applicationId "com.task.googlesearch"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', "API_KEY", API_KEY
+        buildConfigField 'String', "CUSTOM_SEARCH_ENGINE_ID", CUSTOM_SEARCH_ENGINE_ID
     }
     buildTypes {
         release {
@@ -35,6 +38,8 @@ dependencies {
 
     // Koin dependency injection
     implementation "org.koin:koin-core:${rootProject.ext.koin}"
+    implementation "org.koin:koin-android:${rootProject.ext.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${rootProject.ext.koin}"
 
     // Retrofit network library with Rx support and logging interceptor for logging API request and response
     implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"
@@ -45,4 +50,6 @@ dependencies {
     // RxAndroid is a Java VM implementation of Reactive Extensions: a library for
     // composing asynchronous and event-based programs by using observable sequences
     implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroid}"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:${rootProject.ext.lifecycle}"
 }
